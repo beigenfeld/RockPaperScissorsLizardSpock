@@ -13,5 +13,6 @@ namespace RockPaperScissorsLizardSpock
         //constructor
 
         //member methods
+
     }
 }

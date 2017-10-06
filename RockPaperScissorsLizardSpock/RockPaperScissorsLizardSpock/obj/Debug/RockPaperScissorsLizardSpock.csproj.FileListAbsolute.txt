@@ -1,2 +1,3 @@
 C:\Users\beige\Desktop\devCodeCamp\PaperRockScissorsLizardSpock\RockPaperScissorsLizardSpock\RockPaperScissorsLizardSpock\bin\Debug\RockPaperScissorsLizardSpock.exe.config
 C:\Users\beige\Desktop\devCodeCamp\RockPaperScissorsLizardSpock\RockPaperScissorsLizardSpock\RockPaperScissorsLizardSpock\bin\Debug\RockPaperScissorsLizardSpock.exe.config
+C:\Users\beige\Desktop\devCodeCamp\RockPaperScissorsLizardSpock\RockPaperScissorsLizardSpock\RockPaperScissorsLizardSpock\obj\Debug\RockPaperScissorsLizardSpock.csprojResolveAssemblyReference.cache
