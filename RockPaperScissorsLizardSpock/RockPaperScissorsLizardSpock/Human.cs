@@ -9,10 +9,14 @@ namespace RockPaperScissorsLizardSpock
     class Human : Player
     {
         //member variables
-
+        string name;
         //constructor
-
+        void HumanPlayer()
+        {
+            Console.WriteLine("Welcome Player 2.  What is your name?");
+            this.name = Console.ReadLine();
+        }
         //member methods
-
+        
     }
 }

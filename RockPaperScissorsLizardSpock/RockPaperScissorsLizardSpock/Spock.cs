@@ -15,5 +15,15 @@ namespace RockPaperScissorsLizardSpock
         //loses against: paper, lizard
 
         //member methods
-    }
+        void DoesSpockWin(playerTwoSelection)
+        {
+            if (playerTwoSelection == Rock || playerTwoSelection == Scissors)
+            {
+                //player 1 wins
+            }
+            else
+            {
+                //player 2 wins
+            }
+        }
 }

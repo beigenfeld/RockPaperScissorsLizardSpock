@@ -9,9 +9,11 @@ namespace RockPaperScissorsLizardSpock
     class Player
     {
         //member variables
-        name = Console.WriteLine("Please enter your name:");
+        string name;
+        
         //constructor
-            
+        
         //member methods
+
     }
 }
