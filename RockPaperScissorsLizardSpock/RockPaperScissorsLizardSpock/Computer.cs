@@ -9,7 +9,7 @@ namespace RockPaperScissorsLizardSpock
     class Computer : Player
     {
         //member variables
-        Random rdm = new Random();
+        
         //constructor
 
         //member methods

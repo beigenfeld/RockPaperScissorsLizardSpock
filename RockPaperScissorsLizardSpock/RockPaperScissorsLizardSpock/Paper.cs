@@ -15,14 +15,14 @@ namespace RockPaperScissorsLizardSpock
         //loses against: scissors, lizard
 
         //member methods
-        void DoesPaperWin()
-        {
-            if (playerTwoSelection == Rock || playerTwoSelection == Spock) {
-                //player 1 wins
-            }
-            else {
-                //player 2 wins
-            }
-        }
+        //void DoesPaperWin()
+        //{
+        //    if (playerTwoSelection == Rock || playerTwoSelection == Spock) {
+        //        //player 1 wins
+        //    }
+        //    else {
+        //        //player 2 wins
+        //    }
+        //}
     }
 }
