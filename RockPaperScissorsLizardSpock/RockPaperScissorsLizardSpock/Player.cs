@@ -11,9 +11,10 @@ namespace RockPaperScissorsLizardSpock
         //member variables
         public string name;
         public int gesture;
+        public string gestureName;
         public int score;
         //constructor
-        
+
         //member methods
         public virtual void GetGesture()
         {

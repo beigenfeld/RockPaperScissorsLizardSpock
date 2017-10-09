@@ -24,7 +24,7 @@ namespace RockPaperScissorsLizardSpock
         {
             Console.WriteLine("Welcome Player 1.  What is your name?");
             playerOne = new Human();
-            playerOne.name = Console.ReadLine();   
+            playerOne.name = Console.ReadLine();
         }
         public void CreatePlayerTwo()
         {
@@ -48,82 +48,83 @@ namespace RockPaperScissorsLizardSpock
         }
         public void CompareGestures()
         {
-            switch (playerOne.gesture)
-            {
-                case 1:
-                    if (playerTwo.gesture == 3 || playerTwo.gesture == 4)
-                    {
-                        //playerOne.name wins, 
-                        playerOne.score += 1;
-                    }
-                    break;
-                case 2:
-                    if(playerTwo.gesture == 1 || playerTwo.gesture == 5)
-                    {
-                        //playerOne wins, 
-                        playerOne.score += 1;
-                    }
-                    break;
-                case 3:
-                    if (playerTwo.gesture == 3 || playerTwo.gesture == 4)
-                    {
-                        //playerOne wins, 
-                        playerOne.score += 1;
-                    }
-                    break;
-                case 4:
-                    if (playerTwo.gesture == 3 || playerTwo.gesture == 4)
-                    {
-                        //playerOne wins, 
-                        playerOne.score += 1;
-                    }
-                    break;
-                case 5:
-                    if (playerTwo.gesture == 3 || playerTwo.gesture == 4)
-                    {
-                        //playerOne wins, 
-                        playerOne.score += 1;
-                    }
-                    break;
-                default:
-                    //playerTwo wins, 
-                    playerTwo.score += 1;
-                    break;
-            }
-        }
-        void PlayRound()
-        {
-            Console.WriteLine(playerOne.name + ", make your selection");
-            playerOne.GetGesture();
-            Console.WriteLine(playerTwo.name + ", make your selection");
-            playerTwo.GetGesture();
-            CompareGestures();
-        }
+            Console.WriteLine(playerOne.name + " selected " + playerOne.gestureName + " and " + playerTwo.name + " selected " + playerTwo.gestureName);
 
-        public void CheckScore()
-        {
-            if (playerOne.score == 2)
+            if (playerOne.gesture == 1 && (playerTwo.gesture == 3 || playerTwo.gesture == 4))
             {
-                Console.WriteLine(playerOne.name + ", you have won the Game!");
+                Console.WriteLine(playerOne.name + " wins this Round");
+                playerOne.score += 1;
             }
-            else if (playerTwo.score == 2)
+
+            else if (playerOne.gesture == 2 && (playerTwo.gesture == 1 || playerTwo.gesture == 5))
             {
-                Console.WriteLine(playerTwo.name + " has won the Game!");
+                Console.WriteLine(playerOne.name + " wins this Round");
+                playerOne.score += 1;
             }
-            else
+
+            else if (playerOne.gesture == 3 && (playerTwo.gesture == 3 || playerTwo.gesture == 4))
             {
-                PlayRound();
+                Console.WriteLine(playerOne.name + " wins this Round");
+                playerOne.score += 1;
             }
-            Console.ReadLine();
+
+            else if (playerOne.gesture == 4 && (playerTwo.gesture == 3 || playerTwo.gesture == 4))
+            {
+                Console.WriteLine(playerOne.name + " wins this Round");
+                playerOne.score += 1;
+            }
+
+            else if (playerOne.gesture == 5 && (playerTwo.gesture == 3 || playerTwo.gesture == 4))
+            {
+                Console.WriteLine(playerOne.name + " wins this Round");
+                playerOne.score += 1;
+            }
+
+            else if (playerOne.gesture == playerTwo.gesture)
+            {
+                Console.WriteLine("You tied! Try again!");
+            }
+
+            else {
+                Console.WriteLine(playerTwo.name + " wins this Round");
+                playerTwo.score += 1;
+            }
         }
-        public void RunGame()
-        {
-            DisplayRules();
-            CreatePlayerOne();
-            CreatePlayerTwo();
-            PlayRound();
-            CheckScore();
-        }
+    
+    void PlayRound()
+    {
+        Console.WriteLine(playerOne.name + ", make your selection");
+        playerOne.GetGesture();
+        Console.WriteLine(playerTwo.name + ", make your selection");
+        playerTwo.GetGesture();
+        CompareGestures();
     }
+
+    public void CheckScore()
+    {
+        Console.WriteLine(playerOne.name + "'s score is " + playerOne.score + " and " + playerTwo.name + "'s score is " + playerTwo.score);
+        if (playerOne.score == 2)
+        {
+            Console.WriteLine(playerOne.name + ", you have won the Game!");
+        }
+        else if (playerTwo.score == 2)
+        {
+            Console.WriteLine(playerTwo.name + " has won the Game!");
+        }
+        else
+        {
+            PlayRound();
+        }
+        Console.ReadLine();
+    }
+    public void RunGame()
+    {
+        DisplayRules();
+        CreatePlayerOne();
+        CreatePlayerTwo();
+        PlayRound();
+        CheckScore();
+    }
+}
 }
 

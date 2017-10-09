@@ -20,19 +20,24 @@ namespace RockPaperScissorsLizardSpock
             switch (playerNumberChoice)
             {
                 case "1":
-                    gesture = 1; //"Rock"
+                    gesture = 1;
+                    gestureName = "Rock";
                     break;
                 case "2":
-                    gesture = 2; //Paper
+                    gesture = 2;
+                    gestureName = "Paper";
                     break;
                 case "3":
-                    gesture = 3;  //Scissors
+                    gesture = 3;
+                    gestureName = "Scissors";
                     break;
                 case "4":
-                    gesture = 4; //Lizard
+                    gesture = 4;
+                    gestureName = "Lizard";
                     break;
                 case "5":
-                    gesture = 5; //Spock
+                    gesture = 5;
+                    gestureName = "Spock";
                     break;
                 default:
                     Console.WriteLine("Invalid selection.  Please type in '1' '2' '3' '4' or '5'");
