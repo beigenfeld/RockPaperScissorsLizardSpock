@@ -9,18 +9,12 @@ namespace RockPaperScissorsLizardSpock
     class Game
     {
         //member variables
-        string rules = "Rules for Rock, Paper, Scissors, Lizard, Spock:\n\nScissors cuts Paper\nPaper covers Rock\nRock crushes Lizard\nLizard poisons Spock\nSpock smashes Scissors\nScissors decapitates Lizard\nLizard eats Paper\nPaper disproves Spock\nSpock vaporizes Rock\n(and as it always has) Rock crushes Scissors";
-        string playerOneName;
-        int playerOneWinCount = 0;
-        int playerTwoWinCount = 0;
+        string rules = "Rules for Rock, Paper, Scissors, Lizard, Spock:\n\nScissors cuts Paper\nPaper covers Rock\nRock crushes Lizard\nLizard poisons Spock\nSpock smashes Scissors\nScissors decapitates Lizard\nLizard eats Paper\nPaper disproves Spock\nSpock vaporizes Rock\n(and as it always has) Rock crushes Scissors\nTwo out of three wins the game";
+        Player playerOne;
+        Player playerTwo;
+
         //constructor
-        public Game() {
 
-        }
-        //player 1 = human
-        //player 2, human or computer?
-
-        //member methods
         void DisplayRules()
         {
             Console.WriteLine(rules);
@@ -29,7 +23,8 @@ namespace RockPaperScissorsLizardSpock
         void CreatePlayerOne()
         {
             Console.WriteLine("Welcome Player 1.  What is your name?");
-            playerOneName = Console.ReadLine();   
+            playerOne = new Human();
+            playerOne.name = Console.ReadLine();   
         }
         public void CreatePlayerTwo()
         {
@@ -38,10 +33,12 @@ namespace RockPaperScissorsLizardSpock
             switch (challengeWhom)
             {
                 case "1":
-                    Human humanPlayerTwo = new Human();
+                    playerTwo = new Human();
+                    Console.WriteLine("Hello Player 2.  What is your name?");
+                    playerTwo.name = Console.ReadLine();
                     break;
                 case "2":
-                    Computer computerPlayerTwo = new Computer();
+                    playerTwo = new Computer();
                     break;
                 default:
                     Console.WriteLine("Invalid entry.  Please type in '1' or '2'");
@@ -49,22 +46,83 @@ namespace RockPaperScissorsLizardSpock
                     break;
             }
         }
+        public void CompareGestures()
+        {
+            switch (playerOne.gesture)
+            {
+                case 1:
+                    if (playerTwo.gesture == 3 || playerTwo.gesture == 4)
+                    {
+                        //playerOne.name wins, 
+                        playerOne.score += 1;
+                    }
+                    break;
+                case 2:
+                    if(playerTwo.gesture == 1 || playerTwo.gesture == 5)
+                    {
+                        //playerOne wins, 
+                        playerOne.score += 1;
+                    }
+                    break;
+                case 3:
+                    if (playerTwo.gesture == 3 || playerTwo.gesture == 4)
+                    {
+                        //playerOne wins, 
+                        playerOne.score += 1;
+                    }
+                    break;
+                case 4:
+                    if (playerTwo.gesture == 3 || playerTwo.gesture == 4)
+                    {
+                        //playerOne wins, 
+                        playerOne.score += 1;
+                    }
+                    break;
+                case 5:
+                    if (playerTwo.gesture == 3 || playerTwo.gesture == 4)
+                    {
+                        //playerOne wins, 
+                        playerOne.score += 1;
+                    }
+                    break;
+                default:
+                    //playerTwo wins, 
+                    playerTwo.score += 1;
+                    break;
+            }
+        }
+        void PlayRound()
+        {
+            Console.WriteLine(playerOne.name + ", make your selection");
+            playerOne.GetGesture();
+            Console.WriteLine(playerTwo.name + ", make your selection");
+            playerTwo.GetGesture();
+            CompareGestures();
+        }
 
-        //void PlayRound()
-        //{
-        //    PlayerOneGesture();
-        //    PlayerTwoGesture();
-        //    //if player 1 wins, playerOneWinCount += 1
-        //    //if player 2 wins, playerTwoWinCount += 1
-        //}
-
+        public void CheckScore()
+        {
+            if (playerOne.score == 2)
+            {
+                Console.WriteLine(playerOne.name + ", you have won the Game!");
+            }
+            else if (playerTwo.score == 2)
+            {
+                Console.WriteLine(playerTwo.name + " has won the Game!");
+            }
+            else
+            {
+                PlayRound();
+            }
+            Console.ReadLine();
+        }
         public void RunGame()
         {
             DisplayRules();
             CreatePlayerOne();
             CreatePlayerTwo();
-            //PlayRound();
-
+            PlayRound();
+            CheckScore();
         }
     }
 }

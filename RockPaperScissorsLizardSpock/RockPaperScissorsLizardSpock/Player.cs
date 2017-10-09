@@ -6,14 +6,18 @@ using System.Threading.Tasks;
 
 namespace RockPaperScissorsLizardSpock
 {
-    class Player
+    public class Player
     {
         //member variables
-        string name;
-        
+        public string name;
+        public int gesture;
+        public int score;
         //constructor
         
         //member methods
+        public virtual void GetGesture()
+        {
 
-    }
+        }
+    } 
 }

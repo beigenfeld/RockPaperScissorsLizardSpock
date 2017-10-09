@@ -11,16 +11,18 @@ namespace RockPaperScissorsLizardSpock
         //member variables
 
         //constructor
-            //wins against: scissors, lizard
-            //loses against: paper, Spock
+        //wins against: scissors, lizard
+        //loses against: paper, Spock
 
         //member methods
-        //void DoesRockWin ()
+        //void DoesRockWin(Player playerTwo)
         //{
-        //    if (playerTwoSelection == Scissors || playerTwoSelection == Lizard) {
+        //    if (playerTwo.gesture == "Scissors" || playerTwoSelection == Lizard)
+        //    {
         //        //player 1 wins
         //    }
-        //    else {
+        //    else
+        //    {
         //        //player 2 wins
         //    }
         //}
