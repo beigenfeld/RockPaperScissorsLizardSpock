@@ -15,9 +15,11 @@ namespace RockPaperScissorsLizardSpock
 
         //constructor
 
+        //member methods
         void DisplayRules()
         {
             Console.WriteLine(rules);
+            Console.WriteLine("Press any button to continue");
             Console.ReadLine();
         }
         void CreatePlayerOne()
@@ -49,42 +51,35 @@ namespace RockPaperScissorsLizardSpock
         public void CompareGestures()
         {
             Console.WriteLine(playerOne.name + " selected " + playerOne.gestureName + " and " + playerTwo.name + " selected " + playerTwo.gestureName);
-
             if (playerOne.gesture == 1 && (playerTwo.gesture == 3 || playerTwo.gesture == 4))
             {
                 Console.WriteLine(playerOne.name + " wins this Round");
                 playerOne.score += 1;
             }
-
             else if (playerOne.gesture == 2 && (playerTwo.gesture == 1 || playerTwo.gesture == 5))
             {
                 Console.WriteLine(playerOne.name + " wins this Round");
                 playerOne.score += 1;
             }
-
             else if (playerOne.gesture == 3 && (playerTwo.gesture == 3 || playerTwo.gesture == 4))
             {
                 Console.WriteLine(playerOne.name + " wins this Round");
                 playerOne.score += 1;
             }
-
             else if (playerOne.gesture == 4 && (playerTwo.gesture == 3 || playerTwo.gesture == 5))
             {
                 Console.WriteLine(playerOne.name + " wins this Round");
                 playerOne.score += 1;
             }
-
             else if (playerOne.gesture == 5 && (playerTwo.gesture == 1 || playerTwo.gesture == 3))
             {
                 Console.WriteLine(playerOne.name + " wins this Round");
                 playerOne.score += 1;
             }
-
             else if (playerOne.gesture == playerTwo.gesture)
             {
                 Console.WriteLine("You tied! Try again!");
             }
-
             else {
                 Console.WriteLine(playerTwo.name + " wins this Round");
                 playerTwo.score += 1;
@@ -118,13 +113,30 @@ namespace RockPaperScissorsLizardSpock
         }
         Console.ReadLine();
     }
+    public void PlayAgain()
+        {
+            Console.WriteLine("Play again? [1] Yes  [2] No");
+            string response = Console.ReadLine();
+            switch (response)
+            {
+                case "1":
+                    RunGame();
+                    break;
+                case "2":
+                    break;
+                default:
+                    Console.WriteLine("Invalid entry.  Please type in '1' or '2'");
+                    PlayAgain();
+                    break;
+            }
+        }
     public void RunGame()
     {
         DisplayRules();
         CreatePlayerOne();
         CreatePlayerTwo();
         PlayRound();
-        
+        PlayAgain();
     }
 }
 }
