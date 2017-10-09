@@ -43,6 +43,7 @@ namespace RockPaperScissorsLizardSpock
                     gestureName = "Spock";
                     break;
             }
+            Console.Clear();
             
         }
     }

@@ -44,6 +44,7 @@ namespace RockPaperScissorsLizardSpock
                     GetGesture();
                     break;
             }
+            Console.Clear();
         }
     }
 }

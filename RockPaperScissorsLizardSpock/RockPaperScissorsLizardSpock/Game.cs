@@ -68,13 +68,13 @@ namespace RockPaperScissorsLizardSpock
                 playerOne.score += 1;
             }
 
-            else if (playerOne.gesture == 4 && (playerTwo.gesture == 3 || playerTwo.gesture == 4))
+            else if (playerOne.gesture == 4 && (playerTwo.gesture == 3 || playerTwo.gesture == 5))
             {
                 Console.WriteLine(playerOne.name + " wins this Round");
                 playerOne.score += 1;
             }
 
-            else if (playerOne.gesture == 5 && (playerTwo.gesture == 3 || playerTwo.gesture == 4))
+            else if (playerOne.gesture == 5 && (playerTwo.gesture == 1 || playerTwo.gesture == 3))
             {
                 Console.WriteLine(playerOne.name + " wins this Round");
                 playerOne.score += 1;
@@ -98,6 +98,7 @@ namespace RockPaperScissorsLizardSpock
         Console.WriteLine(playerTwo.name + ", make your selection");
         playerTwo.GetGesture();
         CompareGestures();
+        CheckScore();
     }
 
     public void CheckScore()
@@ -123,7 +124,7 @@ namespace RockPaperScissorsLizardSpock
         CreatePlayerOne();
         CreatePlayerTwo();
         PlayRound();
-        CheckScore();
+        
     }
 }
 }
